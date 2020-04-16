@@ -2,10 +2,9 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-  var _courses= ['CSE','ME','CE','ECE','EEE'];
-  var _courseSelected='Select Course';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,28 +12,46 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
             appBar: AppBar(title: Text('KTU HELP',style: TextStyle(fontSize: 20.0))
       ),
-      body: new Container(
-        child: Text('Select Course:',style: TextStyle(fontSize: 20.0)),
-        DropdownButton<String>(
-          items: _courses.map((String dropDownStringItem){
-            return DropdownMenuItem<String>(
-              value: dropDownStringItem,
-              child: Text(dropDownStringItem),
-            );
-          }).toList(),
-
-          onChanged: (String newValueSelected){
-              _onDropDownItemSelected(newValueSelected);
-          },
-
-          value: _courseSelected,
-        )
-      ),
-    ); 
+      body: Center(
+          child: MyStatefulWidget(),
+        ),
+    )); 
   }
-  void _onDropDownItemSelected(String newValueSelected){
-     setState((){
-       this._courseSelected= newValueSelected;
-     })
+}
+class MyStatefulWidget extends StatefulWidget {
+  MyStatefulWidget({Key key}) : super(key: key);
+
+  @override
+  _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
+}
+
+class _MyStatefulWidgetState extends State<MyStatefulWidget> {
+  String dropdownValue = 'Select Course';
+
+  @override
+  Widget build(BuildContext context) {
+    return DropdownButton<String>(
+      value: dropdownValue,
+      icon: Icon(Icons.arrow_downward),
+      iconSize: 24,
+      elevation: 16,
+      style: TextStyle(color: Colors.deepPurple),
+      underline: Container(
+        height: 2,
+        color: Colors.deepPurpleAccent,
+      ),
+      onChanged: (String newValue) {
+        setState(() {
+          dropdownValue = newValue;
+        });
+      },
+      items: <String>['CSE','ECE','ME','CE','EEE']
+          .map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
   }
 }
