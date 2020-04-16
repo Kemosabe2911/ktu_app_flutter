@@ -5,7 +5,7 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   var _courses= ['CSE','ME','CE','ECE','EEE'];
-  VAR _courseSelected='Select Course';
+  var _courseSelected='Select Course';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
             appBar: AppBar(title: Text('KTU HELP',style: TextStyle(fontSize: 20.0))
       ),
-      body: Container(
+      body: new Container(
         child: Text('Select Course:',style: TextStyle(fontSize: 20.0)),
         DropdownButton<String>(
           items: _courses.map((String dropDownStringItem){
@@ -23,9 +23,18 @@ class MyApp extends StatelessWidget {
             );
           }).toList(),
 
-          
+          onChanged: (String newValueSelected){
+              _onDropDownItemSelected(newValueSelected);
+          },
+
+          value: _courseSelected,
         )
       ),
     ); 
+  }
+  void _onDropDownItemSelected(String newValueSelected){
+     setState((){
+       this._courseSelected= newValueSelected;
+     })
   }
 }
