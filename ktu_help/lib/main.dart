@@ -26,7 +26,8 @@ class MyStatefulWidget extends StatefulWidget{
 class MyStatefulWidgetState extends State<MyStatefulWidget>{
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(title: Text('KTU HELP',style: TextStyle(fontSize: 22.0),)),
+      appBar: AppBar(title: Text('KTU HELP',style: TextStyle(fontSize: 22.0),),
+      actions: <Widget>[IconButton(icon: Icon(Icons.list), onPressed: null)],),
     );
   }
 }
