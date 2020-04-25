@@ -69,7 +69,7 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
       body: TabBarView(
         controller: _tabController,
         children:[
-          Text('This is CGPA Tab',style: const TextStyle(fontSize: 36),),
+          Text('This is CGPA Tab',style: const TextStyle(fontSize: 36), textAlign: TextAlign.center),
           Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),),
 
         ]),/*myTabs.map((Tab tab) {
