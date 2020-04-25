@@ -68,7 +68,11 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
       ),
       body: TabBarView(
         controller: _tabController,
-        children: myTabs.map((Tab tab) {
+        children:[
+          Text('This is CGPA Tab',style: const TextStyle(fontSize: 36),),
+          Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),),
+
+        ]),/*myTabs.map((Tab tab) {
           final String label = tab.text.toLowerCase();
           return Center(
             child: Text(
@@ -76,8 +80,7 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
               style: const TextStyle(fontSize: 36),
             ),
           );
-        }).toList(),
-      ),
+        }).toList(),*/
       drawer: Drawer(
         // Add a ListView to the drawer. This ensures the user can scroll
         // through the options in the drawer if there isn't enough vertical
