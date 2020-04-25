@@ -69,8 +69,11 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
       body: TabBarView(
         controller: _tabController,
         children:[
-          Text('This is CGPA Tab',style: const TextStyle(fontSize: 36), textAlign: TextAlign.center),
-          Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),),
+          /*Text('Selected Semester',style: const TextStyle(fontSize: 25), textAlign: TextAlign.center),
+          Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),*/
+          CgpaPage(),
+          Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),
+          //SgpaPage(),
 
         ]),/*myTabs.map((Tab tab) {
           final String label = tab.text.toLowerCase();
@@ -90,7 +93,7 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('KTU HELP'),
+              child: Text('KTU HELP',style: TextStyle(fontSize: 25),),
               decoration: BoxDecoration(
                 color: Colors.black,
               ),
@@ -120,5 +123,28 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
   }
 }
 
+class CgpaPage extends StatefulWidget{
+  @override
+  _CgpaPageState createState() => _CgpaPageState();
+}
 
+class _CgpaPageState extends State<CgpaPage>{
+      List<String> _semesters=['S1','S2','S3','S4','S5','S6','S7','S8'];
+
+    @override
+      Widget build(BuildContext context){
+        return MaterialApp(
+          home: Text('CGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),
+        );
+  }
+}
+
+/*class SgpaPage extends StatefulWidget{
+  @override
+  _SgpaPageState createState() => _SgpaPageState();
+}
+
+class _SgpaPageState extends State<CgpaPage>{
+  
+}*/
 
