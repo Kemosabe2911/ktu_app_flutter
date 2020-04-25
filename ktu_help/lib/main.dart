@@ -133,8 +133,11 @@ class _CgpaPageState extends State<CgpaPage>{
 
     @override
       Widget build(BuildContext context){
-        return MaterialApp(
-          home: Text('CGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),
+        return Scaffold(
+          body: Container(
+            child: Center(
+              child: Text('CGPA Tab',style: const TextStyle(fontSize: 36, color: Colors.white,), textAlign: TextAlign.center,),),
+            ),
         );
   }
 }
