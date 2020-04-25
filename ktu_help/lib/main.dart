@@ -72,8 +72,8 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
           /*Text('Selected Semester',style: const TextStyle(fontSize: 25), textAlign: TextAlign.center),
           Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),*/
           CgpaPage(),
-          Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),
-          //SgpaPage(),
+          //Text('This is SGPA Tab',style: const TextStyle(fontSize: 36),textAlign: TextAlign.center,),
+          SgpaPage(),
 
         ]),/*myTabs.map((Tab tab) {
           final String label = tab.text.toLowerCase();
@@ -136,18 +136,26 @@ class _CgpaPageState extends State<CgpaPage>{
         return Scaffold(
           body: Container(
             child: Center(
-              child: Text('CGPA Tab',style: const TextStyle(fontSize: 36, color: Colors.white,), textAlign: TextAlign.center,),),
+              child: Text('This is CGPA Tab',style: const TextStyle(fontSize: 36, color: Colors.white,), textAlign: TextAlign.center,),),
             ),
         );
   }
 }
 
-/*class SgpaPage extends StatefulWidget{
+class SgpaPage extends StatefulWidget{
   @override
   _SgpaPageState createState() => _SgpaPageState();
 }
 
-class _SgpaPageState extends State<CgpaPage>{
-  
-}*/
+class _SgpaPageState extends State<SgpaPage>{
+  @override
+      Widget build(BuildContext context){
+        return Scaffold(
+          body: Container(
+            child: Center(
+              child: Text('This is SGPA Tab',style: const TextStyle(fontSize: 36, color: Colors.white,), textAlign: TextAlign.center,),),
+            ),
+        );
+  }
+}
 
