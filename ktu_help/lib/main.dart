@@ -93,7 +93,7 @@ class _MyTabbedPageState extends State<MyTabbedPage> with SingleTickerProviderSt
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(
-              child: Text('KTU HELP',style: TextStyle(fontSize: 25),),
+              child: Text('KTU HELP',style: TextStyle(fontSize: 24),),
               decoration: BoxDecoration(
                 color: Colors.black,
               ),
@@ -129,8 +129,8 @@ class CgpaPage extends StatefulWidget{
 }
 
 class _CgpaPageState extends State<CgpaPage>{
-      List<String> _semesters=['S1','S2','S3','S4','S5','S6','S7','S8'];
-
+    List<String> _semesters=['S1','S2','S3','S4','S5','S6','S7','S8'];
+    String _selectedsem= 'S1';
     @override
       Widget build(BuildContext context){
         return Scaffold(
