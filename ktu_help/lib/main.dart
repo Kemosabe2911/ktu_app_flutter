@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -153,10 +154,14 @@ class _CgpaPageState extends State<CgpaPage>{
                                  onChanged: (newValue){
                                    setState(() {
                                      _selectedsem= newValue;
+                                     Padding(
+                                       padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
+                                       child: Text(_selectedsem, style: TextStyle(fontSize: 22,color: Colors.white,),textAlign: TextAlign.center,),
+                                       );
                                    });
                                  }),
                                 ),
-                                ]
+                              ]
                           )
                         ],)
                       
