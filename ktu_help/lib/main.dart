@@ -135,8 +135,9 @@ class _CgpaPageState extends State<CgpaPage>{
       Widget build(BuildContext context){
         return Scaffold(
           body: Container(
-            child: Center(
-              child: Text('This is CGPA Tab',style: const TextStyle(fontSize: 36, color: Colors.white,), textAlign: TextAlign.center,),),
+            child: Text('Select Semester:',style: const TextStyle(fontSize: 20, color: Colors.white,), textAlign: TextAlign.center,),
+            
+            
             ),
         );
   }
