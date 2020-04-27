@@ -136,12 +136,23 @@ class _CgpaPageState extends State<CgpaPage>{
         return Scaffold(
           body: Container(
             child: Padding(
-                        padding: EdgeInsets.fromLTRB(10, 10, 0, 0),
+                        padding: EdgeInsets.fromLTRB(0, 15, 0, 0),
                         child: Column(children: <Widget>[
                           Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[Text('Select Semester:',style: const TextStyle(fontSize: 20, color: Colors.white,),
                               textAlign: TextAlign.center,),
-                              Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0))]
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: DropdownButton(items: _semesters.map((semester){
+                                  return DropdownMenuItem(
+                                    child: new Text(semester),
+                                    value: semester,
+                                  );
+                                }).toList(),
+                                 onChanged: null),
+                                ),
+                                ]
                           )
                         ],)
                       
