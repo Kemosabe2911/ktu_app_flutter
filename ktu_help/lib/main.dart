@@ -150,7 +150,11 @@ class _CgpaPageState extends State<CgpaPage>{
                                     value: semester,
                                   );
                                 }).toList(),
-                                 onChanged: null),
+                                 onChanged: (newvalue){
+                                   setState(() {
+                                     _selectedsem= newvalue;
+                                   });
+                                 }),
                                 ),
                                 ]
                           )
